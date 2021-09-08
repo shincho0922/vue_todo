@@ -150,12 +150,12 @@ export default {
         this.errorMessage = 'ネットに接続がされていない、もしくはサーバーとの接続がされていません。ご確認ください。';
       }
     },
-    addTodo(event) {
+    addTodo() {
       const postTodo = Object.assign({}, {
         title: this.targetTodo.title,
         detail: this.targetTodo.detail,
       });
-      axios.post('http://localhost:3000/api/todos/', postTodo).then(({ data }) => {
+      axios.post('http://localhost:3000/api/todos/', postTodo).then(({data}) => {
         this.todos.unshift(data);
         this.targetTodo = this.initTargetTodo();
         this.hideError()

@@ -8,7 +8,7 @@
           <slot name="todos" />
         </div>
       </main>
-      <app-footer />
+      <app-footer :todos="todos" />
     </div>
   </div>
 </template>
@@ -21,6 +21,12 @@ export default {
   components: {
     appHeader: Header,
     appFooter: Footer,
+  },
+  props: {
+    todos: {
+      type: Array,
+      default: () => [],
+    },
   },
 };
 </script>
